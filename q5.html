@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q5 - Skipping Numbers</title>
+</head>
+<body>
+<script>
+  const N    = parseInt(prompt("Enter N:"));
+  const seed = parseInt(prompt("Enter seed (0-9):"));
+
+  const divisor = seed + 2;
+  let sum = 0;
+  let m = 0;
+
+  while (sum < N) {
+    m++;
+    if (m % divisor !== 0) {
+      sum += m;
+    }
+  }
+
+  alert("m = " + m + "\nSum = " + sum);
+</script>
+</body>
+</html>

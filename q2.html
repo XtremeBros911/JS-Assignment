@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q2 - Roll-Seed Lock</title>
+</head>
+<body>
+<script>
+  const N    = parseInt(prompt("Enter N:"));
+  const seed = parseInt(prompt("Enter seed (0-9):"));
+
+  let current = N;
+
+  for (let i = 0; i < 3; i++) {
+    if (current % 2 === 0) {
+      current = Math.floor(current / 2) + seed;
+    } else {
+      current = current * 3 - seed;
+    }
+  }
+
+  const middleDigit = Math.floor((current / 10)) % 10;
+
+  if (current >= 100 && current <= 999 && middleDigit === seed) {
+    alert("YES, " + current);
+  } else {
+    alert("NO, " + current);
+  }
+</script>
+</body>
+</html>

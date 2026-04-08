@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q3 - Mirror Corridor</title>
+</head>
+<body>
+<script>
+  function isPalindrome(n) {
+    const s = n.toString();
+    return s === s.split("").reverse().join("");
+  }
+
+  const N = parseInt(prompt("Enter N:"));
+  const K = parseInt(prompt("Enter K:"));
+
+  let answer = -1;
+
+  for (let X = 0; X <= 100000; X++) {
+    const val = N + X;
+    if (isPalindrome(val) && val % K === 0) {
+      answer = X;
+      break;
+    }
+  }
+
+  alert("X = " + answer);
+</script>
+</body>
+</html>

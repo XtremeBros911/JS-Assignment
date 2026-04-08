@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q4 - Fare Calculator</title>
+</head>
+<body>
+<script>
+  const base        = parseInt(prompt("Enter base:"));
+  const distance    = parseInt(prompt("Enter distance:"));
+  const minutesLate = parseInt(prompt("Enter minutesLate:"));
+  const seed        = parseInt(prompt("Enter seed (0-9):"));
+
+  let fare = base + 7 * distance;
+
+  if (minutesLate > 15) {
+    fare += 20;
+  }
+
+  if (distance > 10) {
+    fare += Math.floor(0.10 * fare);
+  }
+
+  if (seed % 2 !== 0) {
+    fare -= seed;
+  } else {
+    fare += seed;
+  }
+
+  fare = Math.ceil(fare / 5) * 5;
+
+  alert("Final Fare: " + fare);
+</script>
+</body>
+</html>
